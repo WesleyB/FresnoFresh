@@ -1,0 +1,31 @@
+.col {
+    background-color: red;
+}
+
+.container-fluid {
+    height: 100%;
+    width: 100%;
+}
+
+.nav {
+    height: 100%;
+    width: 100%;
+}
+
+.nav-bar {
+    height: 200px;
+    width: 100%;
+    background-color: red;
+}
+
+.content-one {
+    height: 600px;
+    width: 100%;
+    background-color: yellow;
+}
+
+footer {
+    height: 100px;
+    width: 100%;
+    background-color: blue;
+}
