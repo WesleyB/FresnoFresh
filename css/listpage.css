@@ -7,17 +7,150 @@ body {
     width: 100%;
 }
 
-.nav {
-    height: 100%;
+/* NAV */
+
+/* #####@@@@@##### NAVIGATION BAR ######@@@@@@###### */
+nav {
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    background-color: #508CA4;
+    z-index: 9;
+}
+
+.nav-content-wrap {
     width: 100%;
-    margin: 0;
-    padding: 0;
+    max-height: 75px;
+    justify-content: space-between;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: #68a9f5;
 }
 
-.nav-bar {
-    height: 100px;
+div.logo-on-nav-wrap {
+    width: 80px;
+    height: 75px;
+    font-size: 26px;
+    margin-left: 30px;
 }
 
+.logo-on-nav {
+    height: 70px;
+    margin: 2px 0 0 -5px;
+}
+
+.logo-on-nav:hover {
+    cursor: pointer;
+}
+
+.flex-direction-row,
+.logo-and-search-wrap,
+.user-options {
+    display: flex;
+    flex-direction: row;
+}
+
+.test {
+    border: 1px solid black;
+}
+
+.search-bar-wrap {
+    margin-left: 50px;
+    height: 75px;
+    width: 55vw;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.search-bar {
+    position: relative;
+    height: 40px;
+    width: 400px;
+    border-radius: 4px;
+    background-color: rgb(61, 106, 124);
+}
+
+.search-input {
+    padding: 0 0 0 30px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border: 0px solid black;
+    border-radius: 4px;
+    z-index: 9;
+    background-color: rgba(175, 175, 175, 0);
+    font-size: 22px;
+    color: black;
+}
+
+.search::placeholder {
+    color: rgb(194, 189, 189);
+}
+
+.search-bar .fa {
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    font-size: 20px;
+    z-index: 1;
+}
+
+.fa-search {
+    color: rgb(194, 189, 189);
+}
+
+input {
+    outline: none;
+}
+
+.user-options {
+    width: 350px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.individual-option-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.icon-wrap {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.icon-wrap .fa {
+    font-size: 40px;
+}
+
+.icon-wrap:hover {
+    cursor: pointer;
+}
+
+.drop-down-wrap {
+    display: none;
+}
+
+.create-post-option {
+    border-radius: 4px;
+}
+
+.create-post-option div {
+    height: 43px;
+    border-radius: 4px;
+    min-width: 65px;
+    background-color: #68a9f5;
+    margin-bottom: 8px;
+}
+
+/* END OF NAV */
+/* BODY */
 .card-deck {
     margin-top: 3%;
 }
@@ -30,13 +163,6 @@ body {
     position: fixed;
     height: 100%;
     overflow: auto;
-}
-
-.sidebar a {
-    display: block;
-    color: black;
-    padding: 16px;
-    text-decoration: none;
 }
 
 div.content {
@@ -66,4 +192,10 @@ div.content {
 footer {
     height: 100px;
     width: 100%;
+}
+
+.fab {
+    height: 100px;
+    width: 100px;
+    color: black;
 }
