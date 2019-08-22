@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Account Page</title>
     <link rel="stylesheet" href="account_style.css">
+    <link rel="stylesheet" href="pop-up.css">
     <!-- <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"> -->
 </head>
 
@@ -86,26 +87,26 @@
                     </div>
                 </div>
 
-                <div class="individual-profile-option primary-selected">
+                <div onclick="Post.changeToOwnPosts()" class="individual-profile-option primary-selected">
                     <div class="feed-type left-feed-type">
                         <p>Posts</p>
                     </div>
                     <div class="feed-type right-feed-type">
-                        <p>12</p>
+                        <p class="posts-on-feed-count"></p>
                     </div>
                 </div>
 
-                <div class="individual-profile-option">
+                <div onclick="Post.changeToFavs()" class="individual-profile-option primary-selected">
                     <div class="feed-type left-feed-type">
                         <p>Favorites</p>
                     </div>
                     <div class="feed-type right-feed-type">
-                        <p>0</p>
+                        <p class="posts-on-feed-count"></p>
                     </div>
                 </div>
 
                 <div class="individual-profile-option">
-                    <div class="feed-type left-feed-type">
+                    <div onclick="PopUp.show()" class="feed-type left-feed-type">
                         <p>Create Post!</p>
                     </div>
                 </div>
@@ -119,63 +120,12 @@
         </div>
     </section>
 
-    <footer>
-        
-        <div class="sign-up-wrap">
-            <h1>Sign Up</h1>
-            <div class="image-wrap">
-                <img class="profile-img" src="logo-min.png" alt="">
-            </div>
-            <div class="input-wrap image-wrap">
-                <span style="color:red;"></span>
-                <!-- <button class="files-btn"> -->
-                <label class="files" for="files">Choose Image</label>
-                <!-- </button> -->
-                <input id="files" type="file" accept='image/*' />
-            </div>
-            <form>
-                <div class="input-wrap">
-                    <input placeholder="First Name" type="text">
-                    <div class="sign-up-icon-wrap">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                    </div>
-                </div>
-                <span class="form-text text-muted">Please enter a first name!</span>
-                <div class="input-wrap">
-                    <input placeholder="Last Name" type="text">
-                    <div class="sign-up-icon-wrap">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                    </div>
-                </div>
-                <div class="input-wrap">
-                    <input placeholder="Email" type="email">
-                    <div class="sign-up-icon-wrap">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                    </div>
-                </div>
-                <span class="form-text text-muted">Please enter a valid email!</span>
-                <div class="input-wrap">
-                    <input placeholder="Password" type="password">
-                    <div class="sign-up-icon-wrap">
-                        <i class="fa fa-lock" aria-hidden="true"></i>
-                    </div>
-                </div>
-                <span class="form-text text-muted">Please enter a valid password!</span>
-                <div class="input-wrap">
-                    <button class="submit">Sign Up</button>
-                </div>
-                <span>Already have an account?   <a href="#">Log In</a></span>
-            </form>
-        </div>
-
-
-    </footer>
-
     <script type="text/javascript" src="account_script.js"></script>
     <script>
         Init.start();
     </script>
     <script src="https://use.fontawesome.com/4f5af56c88.js"></script>
+    <script src="pop-up.js"></script>
 
 
 </body>

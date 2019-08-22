@@ -1,6 +1,6 @@
 // TEMPORARY FILLER DATA FOR POSTS
-let firstNames = ["Elma", "WIllow", "Alex", "Jesenia", "Olivia", "Kenny", "Riley", "Julie"];
-
+let firstNames = ["Elma", "Willow", "Alex", "Jesenia", "Olivia", "Kenny", "Riley", "Julie"];
+let isOnFavs = true;
 let LastNames = ["Sanches", "Smith", "Daniels", "Alvarez", "Holt", "Stuart", "Geary", "Arias"];
 
 let profileImgs = ["https://images.unsplash.com/photo-1531251445707-1f000e1e87d0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=581&q=80",
@@ -17,8 +17,6 @@ let postTitles = ["Dairy has spare Milk", "Have some Food", "Watermelon on sale!
     "I have flowers not food haha", "Giving out food for organizations", "I have flour for baking",
     "Anyone want quality squash farming seeds?"
 ];
-
-
 
 let postDescription = ["Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis sequi magni odio?",
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur autem repellat cumque suscipit eius similique asperiores nihil ipsam exercitationem.",
@@ -40,6 +38,9 @@ let postImgs = ["https://images.unsplash.com/photo-1523473827533-2a64d0d36748?ix
     "https://images.unsplash.com/photo-1528613526328-8c19bd037322?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=60"
 ];
 
+let overallFavorites = "";
+let overallPosts = "";
+
 let favorites = {
     profileImg: profileImgs[0],
     firstName: "a",
@@ -51,13 +52,21 @@ let favorites = {
 }
 
 let ownPosts = {
-    profileImg: "a",
-    firstName: "a",
-    lastName: "a",
-    postTitle: "a",
-    postDesc: "a",
-    postImg: "a",
-    randNum: "a",
+    profileImg: "https://images.unsplash.com/photo-1531943965939-7fa7994ffa68?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    firstName: "Gregory",
+    lastName: "Garner",
+    postTitle: ["I'd like rice for an upcoming party", "Need a few watermelons", "Local homeless shelter wants food. Spreading the word!", "Moving in town, would buy some fruit from someone"],
+    postDesc: ["Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione cum voluptas accusamus iste!",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo corporis veniam sed quam suscipit?",
+        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias quo eaque eligendi praesentium ipsum facilis laborum voluptates tempora nesciunt.",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat ipsa voluptatibus ad eos doloremque veniam a? Inventore quaerat repellat quas quod sit."
+    ],
+    postImg: ["https://images.unsplash.com/photo-1516684732162-798a0062be99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+        "https://images.unsplash.com/photo-1526841535633-ef3be0b21fd2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+        "https://images.unsplash.com/photo-1519430044529-9a9a57177865?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1661&q=80",
+        "https://images.unsplash.com/photo-1520038410233-7141be7e6f97?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+    ],
+    randNum: [4, 12, 2, 8],
 }
 
 let randNum = [23, 52, 32, 75, 23, 13, 6, 45];
@@ -69,20 +78,23 @@ function initialize() {
     // Variables associated with post
     let postManage = document.getElementsByClassName('selected-feed')[0];
 
-
-
     this.start = () => {
         Init.highlight();
         Init.updatePostTemplate();
         Init.post();
+        Init.generatePosts();
     }
 
     this.highlight = () => {
-        let a = document.getElementsByClassName('primary-selected')[0];
+        let a = document.getElementsByClassName('primary-selected')[1];
         a.style.backgroundColor = "rgb(193, 196, 202)";
     }
 
     this.post = () => {
+        let postCount = firstNames.length;
+        let postLog = document.getElementsByClassName('posts-on-feed-count');
+        postLog[1].innerHTML = postCount;
+        postLog[0].innerHTML = ownPosts.postDesc.length;
 
         for (let i = 0; i < firstNames.length; i++) {
             favorites.profileImg = profileImgs[i];
@@ -94,56 +106,73 @@ function initialize() {
             favorites.randNum = randNum[i];
             Init.updatePostTemplate();
             postManage.innerHTML += post;
+            overallFavorites = postManage.innerHTML;
+        }
+    }
+
+    this.generatePosts = () => {
+        let a = document.getElementsByClassName('profile')[0];
+        a.src = ownPosts.profileImg;
+
+        for (let i = 0; i < ownPosts.postTitle.length; i++) {
+            favorites.profileImg = ownPosts.profileImg;
+            favorites.firstName = ownPosts.firstName;
+            favorites.lastName = ownPosts.lastName;
+            favorites.postTitle = ownPosts.postTitle[i];
+            favorites.postDesc = ownPosts.postDesc[i];
+            favorites.postImg = ownPosts.postImg[i];
+            favorites.randNum = ownPosts.randNum[i];
+            Init.updatePostTemplate();
+            overallPosts += post;
         }
     }
 
     this.updatePostTemplate = () => {
         post = `           <!-- Splash Page -->
-<div class="post-container">
-    <div class="post-wrap">
-        <div class="post-description-wrap">
-            <div class="post-creator-profile">
-                <div class="post-image-wrap">
-                    <img src="${favorites.profileImg}" alt="" class="post-profile-pic">
+        <div class="post-container">
+            <div class="post-wrap">
+                <div class="post-description-wrap">
+                    <div class="post-creator-profile">
+                        <div class="post-image-wrap">
+                            <img src="${favorites.profileImg}" alt="" class="post-profile-pic">
+                        </div>
+        
+                        <div class="post-creator-desc">
+                            <h6>${favorites.firstName} ${favorites.lastName}</h6>
+                            <p class="post-title">${favorites.postTitle}</p>
+                        </div>
+                    </div>
+        
+                    <div class="post-text-wrap">
+                        <p class="post-text">${favorites.postDesc}</p>
+                    </div>
                 </div>
-
-                <div class="post-creator-desc">
-                    <h6>${favorites.firstName} ${favorites.lastName}</h6>
-                    <p class="post-title">${favorites.postTitle}</p>
+        
+                <div class="post-main-img-wrap">
+                    <img src="${favorites.postImg}" alt="" class="post-profile-pic">
                 </div>
+        
+                <div class="likes-wrap">
+                    <i class="fa fa-heart-o"></i>
+                    <p class="total-likes">${favorites.randNum}</p>
+                </div>
+        
+               <div class="post-hr"></div>
+        
+                <!-- No Need to edit this atm
+                <div class="asdf1back-wrap">
+                    <div class="asdf1back-type">
+                        <div class="asdf4">d</div>
+                        <h4>Like</h4>
+                    </div>
+                    <div class="asdf1back-type">
+                        <div class="asdf4">d</div>
+                        <h4>Comment</h4>
+                   </div>
+                </div>
+            -->
             </div>
-
-            <div class="post-text-wrap">
-                <p class="post-text">${favorites.postDesc}</p>
-            </div>
-        </div>
-
-        <div class="post-main-img-wrap">
-            <img src="${favorites.postImg}" alt="" class="post-profile-pic">
-        </div>
-
-        <div class="likes-wrap">
-            <i class="fa fa-heart-o"></i>
-            <p class="total-likes">${favorites.randNum}</p>
-        </div>
-
-        <div class="post-hr"></div>
-
-        <!-- No Need to edit this atm
-        <div class="asdf1back-wrap">
-            <div class="asdf1back-type">
-                <div class="asdf4">d</div>
-                <h4>Like</h4>
-            </div>
-            <div class="asdf1back-type">
-                <div class="asdf4">d</div>
-                <h4>Comment</h4>
-            </div>
-        </div>
-        -->
-
-    </div>
-</div>`;
+        </div>`;
     }
 }
 
@@ -193,7 +222,6 @@ function action() {
             optionsWrap.className = 'user-options';
         }
     }
-
 }
 
 let Interact = new action();
@@ -201,13 +229,22 @@ let Interact = new action();
 
 
 function managePost() {
+    let a = document.getElementsByClassName('primary-selected');
+
+    let postManage = document.getElementsByClassName('selected-feed')[0];
 
     this.changeToFavs = () => {
-
+        isOnFavs = true;
+        postManage.innerHTML = overallFavorites;
+        a[0].style.backgroundColor = "#D8DBE2";
+        a[1].style.backgroundColor = "rgb(193, 196, 202)";
     }
 
     this.changeToOwnPosts = () => {
-
+        isOnFavs = false;
+        postManage.innerHTML = overallPosts;
+        a[0].style.backgroundColor = "rgb(193, 196, 202)";
+        a[1].style.backgroundColor = "#D8DBE2";
     }
 
     this.post = () => {
