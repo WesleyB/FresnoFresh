@@ -151,6 +151,11 @@ input {
 
 /* END OF NAV */
 /* BODY */
+
+.content {
+    margin-top: 5%;
+}
+
 .card-deck {
     margin-top: 3%;
 }
