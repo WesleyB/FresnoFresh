@@ -16,6 +16,7 @@
     <div class="container-fluid">
         <!-- NAVIGATION BAR -->
 
+        <!-- #####@@@@@@##### NAVIGATION BAR #####@@@@@@##### -->
         <nav class="flex-direction-row">
             <div class="nav-content-wrap flex-direction-row">
                 <div class="logo-and-search-wrap">
@@ -47,26 +48,29 @@
                         </div>
                     </div>
 
-                    <div class="individual-option-wrap">
+                    <div onclick="PopUp.show()" class="individual-option-wrap">
                         <div class="icon-wrap">
                             <i class="fa fa-envelope-o"></i>
                         </div>
                     </div>
 
                     <div class="individual-option-wrap">
-                        <div class="icon-wrap">
-                            <i class="fa fa-user"></i>
-                        </div>
+                        <a href="my-account.html">
+                            <div class="icon-wrap">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="individual-option-wrap create-post-option">
-                        <div onclick="Post.post()" class="icon-wrap">
+                        <div onclick="PopUp.show()" class="icon-wrap">
                             <i class="fa fa-pencil"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </nav>
+
 
         <!-- PROFILE SIDE -->
 

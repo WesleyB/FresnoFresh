@@ -1,3 +1,5 @@
+/* GLOBAL */
+
 body {
     margin: 0;
 }
@@ -7,9 +9,8 @@ body {
     width: 100%;
 }
 
-/* NAV */
+/* NAVIGATION BAR */
 
-/* #####@@@@@##### NAVIGATION BAR ######@@@@@@###### */
 nav {
     position: fixed;
     width: 100vw;
@@ -119,6 +120,11 @@ input {
     margin-right: 20px;
 }
 
+.individual-option-wrap a {
+    color: black;
+    margin-top: -5px;
+}
+
 .icon-wrap {
     width: 100%;
     height: 100%;
@@ -149,12 +155,6 @@ input {
     margin-bottom: 8px;
 }
 
-/* END OF NAV */
-/* BODY */
-
-.content {
-    margin-top: 5%;
-}
 
 .card-deck {
     margin-top: 3%;
@@ -173,7 +173,55 @@ input {
 div.content {
     margin-left: 200px;
     padding: 1px 16px;
-    height: 1000px;
+}
+
+/* #####@@@@@#####        ######@@@@@@###### */
+/* #####@@@@@##### MOBILE ######@@@@@@###### */
+/* #####@@@@@#####        ######@@@@@@###### */
+
+@media screen and (max-width: 1000px) {
+
+    /* #####@@@@@##### NAVIGATION BAR ######@@@@@@###### */
+
+    .user-options {
+        width: 90px;
+        flex-direction: column;
+        border: 0;
+        border-radius: 9px;
+        background-color: #4f8ca3;
+    }
+
+    .dropped-options {
+        height: 400px;
+        margin-top: -1px;
+    }
+
+    .dropped-options .drop-down-wrap div {
+        margin-top: -4px;
+    }
+
+    div.do-flex {
+        display: flex;
+    }
+  
+    .individual-option-wrap {
+        display: none;
+        margin-right: 0;
+    }
+
+    .drop-down-wrap {
+        display: flex;
+    }
+  
+}
+
+@media screen and (max-width: 750px) {
+
+    /* #####@@@@@##### NAVIGATION BAR ######@@@@@@###### */
+
+    .search-bar-wrap {
+        margin-left: 20px;
+    }
 }
 
 @media screen and (max-width: 700px) {
@@ -183,8 +231,29 @@ div.content {
       position: relative;
     }
     
-    .sidebar a {float: left;}
-    div.content {margin-left: 0;}
+    .sidebar a {
+      float: left;
+    }
+  
+    div.content { 
+      margin-left: 0;
+    }
+}
+
+
+
+@media screen and (max-width: 600px) {
+    /* #####@@@@@##### NAVIGATION BAR ######@@@@@@###### */
+
+    div.logo-on-nav-wrap {
+        margin-left: 10px;
+    }
+
+    .search-bar-wrap {
+        margin-left: 10px;
+        width: 45vw;
+        display: none;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -203,4 +272,8 @@ footer {
     height: 100px;
     width: 100px;
     color: black;
+}
+
+body > .container-fluid {
+  margin-top: 75px;
 }
