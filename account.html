@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Account Page</title>
-    <link rel="stylesheet" href="account_style.css">
+    <link rel="stylesheet" href="my-account-style.css">
     <link rel="stylesheet" href="pop-up.css">
-    <!-- <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
+<body onload="Init.start()">
 
     <!-- #####@@@@@@##### NAVIGATION BAR #####@@@@@@##### -->
     <nav class="flex-direction-row">
@@ -40,12 +41,14 @@
                 </div>
 
                 <div class="individual-option-wrap">
+                  <a href="listpage.html">
                     <div class="icon-wrap">
                         <i class="fa fa-home"></i>
                     </div>
+                  </a>
                 </div>
 
-                <div class="individual-option-wrap">
+                <div onclick="PopUp.show()" class="individual-option-wrap">
                     <div class="icon-wrap">
                         <i class="fa fa-envelope-o"></i>
                     </div>
@@ -67,7 +70,7 @@
     </nav>
 
     <!-- #####@@@@@@##### PERSONAL GENERAL FEED #####@@@@@@##### -->
-    <section class="overall-feed flex-direction-row test">
+    <section class="overall-feed flex-direction-row">
 
         <div class="personal-options-col">
             <div class="profile-options-wrap">
@@ -106,27 +109,22 @@
                 </div>
 
                 <div class="individual-profile-option">
-                    <div onclick="PopUp.show()" class="feed-type left-feed-type">
+                    <div class="feed-type left-feed-type">
                         <p>Create Post!</p>
                     </div>
                 </div>
-
             </div>
         </div>
 
         <!-- #####@@@@@@##### GENERATED POSTS #####@@@@@@##### -->
-        <div class="selected-feed">
+        <div id="test-select" class="selected-feed">
             <!-- This is where the posts go -->
         </div>
     </section>
 
-    <script type="text/javascript" src="account_script.js"></script>
-    <script>
-        Init.start();
-    </script>
+    <script type="text/javascript" src="my-account-script.js"></script>
     <script src="https://use.fontawesome.com/4f5af56c88.js"></script>
     <script src="pop-up.js"></script>
-
 
 </body>
 

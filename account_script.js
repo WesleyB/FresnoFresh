@@ -72,17 +72,24 @@ let ownPosts = {
 let randNum = [23, 52, 32, 75, 23, 13, 6, 45];
 // END OF FILLER DATA
 
+let postManage;
 let post = "";
 
-function initialize() {
-    // Variables associated with post
-    let postManage = document.getElementsByClassName('selected-feed')[0];
+// Variables associated with the search bar
+let search;
+let icon;
+let input;
+let searchVal;
 
+function initialize() {
+  
+    // Variables associated with post
     this.start = () => {
         Init.highlight();
-        Init.updatePostTemplate();
         Init.post();
         Init.generatePosts();
+        Init.grab();
+        Init.search();
     }
 
     this.highlight = () => {
@@ -105,8 +112,7 @@ function initialize() {
             favorites.postImg = postImgs[i];
             favorites.randNum = randNum[i];
             Init.updatePostTemplate();
-            postManage.innerHTML += post;
-            overallFavorites = postManage.innerHTML;
+            overallFavorites += post;
         }
     }
 
@@ -153,7 +159,7 @@ function initialize() {
                 </div>
         
                 <div class="likes-wrap">
-                    <i class="fa fa-heart-o"></i>
+                    <i class="fa fa-heart"></i>
                     <p class="total-likes">${favorites.randNum}</p>
                 </div>
         
@@ -174,6 +180,19 @@ function initialize() {
             </div>
         </div>`;
     }
+    
+    this.grab = ()=> {
+      postManage = document.getElementById('test-select');
+      postManage.innerHTML = overallFavorites;
+    }
+    
+    this.search = ()=> {
+      // Variables associated with the search bar
+      search = document.getElementsByClassName('search-bar')[0];
+      icon = document.getElementsByClassName('fa-search')[0];
+      input = document.getElementsByClassName('search-input')[0];
+      searchVal = "";
+    }
 }
 
 let Init = new initialize();
@@ -182,11 +201,11 @@ let Init = new initialize();
 
 function action() {
 
-    // Variables associated with the search bar
-    let search = document.getElementsByClassName('search-bar')[0];
-    let icon = document.getElementsByClassName('fa-search')[0];
-    let input = document.getElementsByClassName('search-input')[0];
-    let searchVal = "";
+    // // Variables associated with the search bar
+    // let search = document.getElementsByClassName('search-bar')[0];
+    // let icon = document.getElementsByClassName('fa-search')[0];
+    // let input = document.getElementsByClassName('search-input')[0];
+    // let searchVal = "";
 
     // Highlights search bar and returns information that may have been searched
     this.searchFocus = () => {
@@ -203,22 +222,24 @@ function action() {
         input.value = "";
     }
 
+    // Allows for drop down to show and drop other options on nav
     this.dropDown = () => {
         let options = document.getElementsByClassName('individual-option-wrap');
         let optionsWrap = document.getElementsByClassName('user-options')[0];
 
         if (options[1].className === 'individual-option-wrap') {
             for (let i = 1; i < options.length - 1; i++) {
-                options[i].className += ' test2';
+                options[i].className += ' do-flex';
                 console.log(options[i].className);
             }
             optionsWrap.className += ' dropped-options';
-            options[options.length - 1].className += ' test2 create-post-option'
+            options[options.length - 1].className += ' do-flex create-post-option'
 
         } else {
-            for (let i = 1; i < options.length; i++) {
+            for (let i = 1; i < options.length - 1; i++) {
                 options[i].className = 'individual-option-wrap';
             }
+            options[options.length - 1].className = 'individual-option-wrap create-post-option'
             optionsWrap.className = 'user-options';
         }
     }
@@ -231,13 +252,12 @@ let Interact = new action();
 function managePost() {
     let a = document.getElementsByClassName('primary-selected');
 
-    let postManage = document.getElementsByClassName('selected-feed')[0];
-
     this.changeToFavs = () => {
         isOnFavs = true;
         postManage.innerHTML = overallFavorites;
         a[0].style.backgroundColor = "#D8DBE2";
         a[1].style.backgroundColor = "rgb(193, 196, 202)";
+
     }
 
     this.changeToOwnPosts = () => {
@@ -253,3 +273,11 @@ function managePost() {
 }
 
 let Post = new managePost();
+
+// function update() {
+//   postManage = document.getElementById('test-select');
+// }
+
+// window.onload = function() {
+//  alert("let's go!");
+// }
