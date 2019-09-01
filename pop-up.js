@@ -173,10 +173,6 @@ function inputs() {
     chosenImg = img.src;
     console.log('img');
   }
-  
-  
-  
-  
 }
 
 
