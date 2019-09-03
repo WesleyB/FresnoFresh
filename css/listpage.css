@@ -1,5 +1,4 @@
 /* GLOBAL */
-
 body {
     margin: 0;
 }
@@ -9,13 +8,12 @@ body {
     width: 100%;
 }
 
-/* NAVIGATION BAR */
-
+/* #####@@@@@##### NAVIGATION BAR ######@@@@@@###### */
 nav {
     position: fixed;
     width: 100vw;
     top: 0;
-    background-color: #508CA4;
+    background-color: #2c6ab5;
     z-index: 9;
 }
 
@@ -69,7 +67,7 @@ div.logo-on-nav-wrap {
     height: 40px;
     width: 400px;
     border-radius: 4px;
-    background-color: rgb(61, 106, 124);
+    background-color: #67a9f5;
 }
 
 .search-input {
@@ -85,9 +83,13 @@ div.logo-on-nav-wrap {
     color: black;
 }
 
-.search::placeholder {
-    color: rgb(194, 189, 189);
-}
+ .search-input::-webkit-input-placeholder {
+     color: #fff;
+ }
+
+ .search-input:focus::placeholder {
+     color: #5a5e60;
+ }
 
 .search-bar .fa {
     position: absolute;
@@ -98,7 +100,7 @@ div.logo-on-nav-wrap {
 }
 
 .fa-search {
-    color: rgb(194, 189, 189);
+    color: #fff;
 }
 
 input {
@@ -155,8 +157,6 @@ input {
     margin-bottom: 8px;
 }
 
-/* Content */
-
 
 .card-deck {
     margin-top: 3%;
@@ -177,13 +177,6 @@ div.content {
     padding: 1px 16px;
 }
 
-/* Footer */
-
-.social-media {
-    margin-top: 5%;
-    margin-left: 50%;
-}
-
 /* #####@@@@@#####        ######@@@@@@###### */
 /* #####@@@@@##### MOBILE ######@@@@@@###### */
 /* #####@@@@@#####        ######@@@@@@###### */
@@ -197,7 +190,7 @@ div.content {
         flex-direction: column;
         border: 0;
         border-radius: 9px;
-        background-color: #4f8ca3;
+        background-color: #2c6ab5;
     }
 
     .dropped-options {
