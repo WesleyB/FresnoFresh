@@ -68,16 +68,22 @@ function action() {
 
 let Interact = new action();
 
-// Show post contact info
+// WHEN NEW FORM IS POSTED, ADD CARD WITH CARD INFO
 
-var theParent = document.querySelector("#theDude");
+
+
+// WHEN CARD IS CLICKED, OPEN UP POP UP WITH CONTACT INFO
+
+window.addEventListener('load', function() {
+var theParent = document.getElementById("theDude");
 theParent.addEventListener("click", doSomething, false);
  
 function doSomething(e) {
-    if (e.target !== e.currentTarget) {
-        var clickedItem = e.target.id;
-        // alert("Hello " + clickedItem);
-        console.log('hello');
+    if (e.target.className == 'card-img-top') {
+
+        // BRINGS UP POP UP WITH CONTACT INFORMATION
+        alert('hello');
     }
     e.stopPropagation();
 }
+});
