@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Account Page</title>
-    <link rel="stylesheet" href="account_style.css">
+    <link rel="stylesheet" href="my-account-style.css">
     <link rel="stylesheet" href="pop-up.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -19,10 +19,10 @@
         <div class="nav-content-wrap flex-direction-row">
             <div class="logo-and-search-wrap">
                 <div class="logo-on-nav-wrap">
-                  <a href="index.html">
-                    <img class="logo-on-nav"
-                        src="https://cdn.glitch.com/ede46f42-b5b9-48ad-8d72-f38482566cde%2Flogo.png?v=1566156485018"
-                        alt="">
+                    <a href="index.html">
+                        <img class="logo-on-nav"
+                            src="https://cdn.glitch.com/ede46f42-b5b9-48ad-8d72-f38482566cde%2Flogo.png?v=1566156485018"
+                            alt="">
                     </a>
                 </div>
 
@@ -43,11 +43,11 @@
                 </div>
 
                 <div class="individual-option-wrap">
-                  <a href="listpage.html">
-                    <div class="icon-wrap">
-                        <i class="fa fa-home"></i>
-                    </div>
-                  </a>
+                    <a href="listpage.html">
+                        <div class="icon-wrap">
+                            <i class="fa fa-home"></i>
+                        </div>
+                    </a>
                 </div>
 
                 <div onclick="PopUp.show()" class="individual-option-wrap">
@@ -83,11 +83,11 @@
 
                     <div class="profile-text-wrap">
                         <div class="user-name-wrap">
-                            <p>Gregory Garner</p>
+                            <p class="user-name">Gregory Garner</p>
                         </div>
 
                         <div class="user-type-wrap">
-                            <p>Consumer</p>
+                            <p class="user-type">Consumer</p>
                         </div>
                     </div>
                 </div>
@@ -124,14 +124,67 @@
         </div>
     </section>
 
-    <script type="text/javascript" src="account_script.js"></script>
-    <script src="https://use.fontawesome.com/4f5af56c88.js"></script>
+    <footer>
+        <p>@2019 Made with <i class="fa fa-heart"></i></p>
+    </footer>
+
     <script src="pop-up.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="my-account-script.js"></script>
+    <script src="https://use.fontawesome.com/4f5af56c88.js"></script>
+
 
 </body>
 
 </html>
-<!-- Color Scheme
-    #286e8c
-#35809e
--->
+
+
+
+<!--    
+<div class="post-container">
+    <div class="post-wrap">
+        <div class="post-description-wrap">
+            <div class="post-creator-profile">
+                <div class="post-image-wrap">
+                    <img src="${postData.profileImg}" alt="" class="post-profile-pic">
+                </div>
+
+                <div class="post-creator-desc">
+                    <h6>${postData.firstName} ${postData.lastName}</h6>
+                    <p class="post-title">${postData.postTitle}</p>
+                </div>
+            </div>
+
+            <div class="post-text-wrap">
+                <p class="post-text">${postData.postDesc}</p>
+            </div>
+        </div>
+
+        <div class="post-main-img-wrap">
+            <img src="${postData.postImg}" alt="" class="post-profile-pic">
+        </div>
+
+        <div class="likes-wrap">
+            <i class="fa fa-heart"></i>
+            <p class="total-likes">${postData.randNum}</p>
+        </div>
+
+       <div class="post-hr"></div>
+
+</div>
+</div> -->
+
+
+
+<!-- No Need to edit this atm
+        <div class="asdf1back-wrap">
+            <div class="asdf1back-type">
+                <div class="asdf4">d</div>
+                <h4>Like</h4>
+            </div>
+            <div class="asdf1back-type">
+                <div class="asdf4">d</div>
+                <h4>Comment</h4>
+           </div>
+        </div>
+    -->
