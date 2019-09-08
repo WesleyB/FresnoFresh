@@ -2,6 +2,7 @@
  body {
     margin: 0;
     background-color: #323232;
+    font-family: 'Aleo', serif;
 }
 
 
@@ -10,7 +11,7 @@ nav {
     position: fixed;
     width: 100vw;
     top: 0;
-    background-color: #508CA4;
+    background-color: #2c6ab5;
     z-index: 9;
 }
 
@@ -65,7 +66,7 @@ div.logo-on-nav-wrap {
     height: 40px;
     width: 400px;
     border-radius: 4px;
-    background-color: rgb(61, 106, 124);
+    background-color: #67a9f5;
 }
 
 .search-input {
@@ -81,8 +82,12 @@ div.logo-on-nav-wrap {
     color: black;
 }
 
-.search::placeholder {
-    color: rgb(194, 189, 189);
+.search-input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.search-input:focus::placeholder {
+    color: #5a5e60;
 }
 
 .search-bar .fa {
@@ -94,7 +99,7 @@ div.logo-on-nav-wrap {
 }
 
 .fa-search {
-    color: rgb(194, 189, 189);
+    color: #fff;
 }
 
 input {
@@ -182,6 +187,7 @@ input {
     font-size: 40px;
     text-align: center;
     width: 100%;
+    font-weight: 700;
 }
 
 .header-options-wrap {
@@ -224,7 +230,7 @@ button:hover {
     color: #667;
 }
 
-/* @@@@@#####@@@@@ REVIEW SECTION @@@@@#####@@@@@ */
+/* @@@@@#####@@@@@ TESTIMONY SECTION @@@@@#####@@@@@ */
 .reviews {
     background-color: white;
 }
@@ -384,7 +390,7 @@ button:hover {
 
 /* #####@@@@@##### FOOTER #####@@@@@##### */
 footer {
-    background-color: #4f8ca3;
+    background-color: #2c6ab5;
     text-align: center;
 }
 
@@ -398,6 +404,13 @@ footer i {
     padding-left: 3px;
 }
 
+.social-media i {
+    color: #007bff;
+}
+
+.social-media i:hover {
+    color: #0056b3;
+}
 
 
 
@@ -413,7 +426,7 @@ footer i {
         flex-direction: column;
         border: 0;
         border-radius: 9px;
-        background-color: #4f8ca3;
+        background-color: #2c6ab5;
     }
 
     .dropped-options {
@@ -500,8 +513,8 @@ footer i {
     .search-bar-wrap {
         margin-left: 20px;
     }
-  
-     /* #####@@@@@###### INFORMATION SECTION #####@@@@@##### */
+
+    /* #####@@@@@###### INFORMATION SECTION #####@@@@@##### */
     .info-type-wrap {
         width: 100%;
         max-width: none;

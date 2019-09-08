@@ -139,6 +139,7 @@ function managePost() {
         userType.innerHTML = profileType;
     }
 
+    // Changes post name and image on overall posts
     this.ownPostData = () => {
         ownPostName = document.getElementsByClassName('own-poster-name');
         ownPostImg = document.getElementsByClassName('own-poster-img');

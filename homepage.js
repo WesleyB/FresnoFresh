@@ -5,25 +5,25 @@ let input;
 let searchVal;
 
 // Initializes attributes for them to have data preset
-function initialize () {
-  this.start = ()=> {
-    Init.input();
-  }
-  
-  this.input = ()=> {
-    // Variables associated with the search bar
-    search = document.getElementsByClassName('search-bar')[0];
-    icon = document.getElementsByClassName('fa-search')[0];
-    input = document.getElementsByClassName('search-input')[0];
-    searchVal = "";
-  }
+function initialize() {
+    this.start = () => {
+        Init.input();
+    }
+
+    this.input = () => {
+        // Variables associated with the search bar
+        search = document.getElementsByClassName('search-bar')[0];
+        icon = document.getElementsByClassName('fa-search')[0];
+        input = document.getElementsByClassName('search-input')[0];
+        searchVal = "";
+    }
 }
 
 let Init = new initialize;
 
 // Function that controls actions such as Dropdown, Searchbar and Pop Up
 function action() {
-  
+
     // Local pop up variables
     let position = document.getElementsByTagName('body')[0];
     let popUp = document.getElementsByClassName('pop-up')[0];
@@ -37,8 +37,8 @@ function action() {
 
     // Empties search bar but holds previous search
     this.searchBlur = () => {
-        search.style.backgroundColor = "rgb(61, 106, 124)";
-        icon.style.color = "rgb(194, 189, 189)";
+        search.style.backgroundColor = "#67a9f5";
+        icon.style.color = "#fff";
         searchVal = input.value;
         input.value = "";
     }
